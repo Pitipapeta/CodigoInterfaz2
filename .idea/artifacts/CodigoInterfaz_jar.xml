@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="CodigoInterfaz:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/CodigoInterfaz_jar</output-path>
+    <root id="archive" name="CodigoInterfaz.jar">
+      <element id="module-output" name="CodigoInterfaz" />
+    </root>
+  </artifact>
+</component>
