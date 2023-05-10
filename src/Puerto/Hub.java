@@ -23,16 +23,17 @@ public class Hub {
         return plano;
     }
 
-    public void contenedor(int id) {
+    public String mostrarContenedor(int id) {
+        String s = "";
         for (int i = 0; i < puerto.length; i++) {
             for (int j = 0; j < puerto[0].length; j++) {
                 if (puerto[i][j].getId() == id) {
-                    puerto[i][j].toString();
-                    return;
+                    s += puerto[i][j].toString();
+                    return s;
                 }
             }
         }
-        System.out.println("No  existe un contendor con dicho ID en el puerto");
+        return "No  existe un contendor con dicho ID en el puerto";
     }
 
     public boolean apilar(Contenedor contenedor) {
@@ -63,19 +64,16 @@ public class Hub {
         return false;
     }
 
-    public void desapilar(int colum) {
-        if (colum < 0 || colum >= puerto.length) return;
+    public boolean desapilar(int colum) {
+        if (colum < 0 || colum >= puerto.length) return false;
         for (int i = 0; i < puerto.length; i++) {
             if (puerto[i][colum] != null) {
                 Contenedor vacio = puerto[i][colum];
-                return;
+                return true;
             }
         }
-        return;
+        return true;
     }
-
-
-
     public int npais(String procedencia) {
         int s = 0;
         for (int i = 0; i < puerto.length; i++) {

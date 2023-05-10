@@ -2,10 +2,12 @@ package Puerto;
 
 
 public class Puerto{
-    Hub[] hubs = new Hub[3];
+    Hub[] hubs;
 
 
-    public Puerto(){}
+    public Puerto(){
+        this.hubs = new Hub[3];
+    }
     public Puerto(Hub[] hubs){
         if(hubs != null) this.hubs = hubs;
     }
@@ -21,17 +23,23 @@ public class Puerto{
         return false;
     }
 
-    public boolean Desapilar(int nHub, int columna){
-        return false;
+    public boolean Desapilar(int nHub, int colum){
+
+        if (colum < 0 || colum >= hubs.length) return false;
+        for (int i = 0; i < hubs.length; i++) {
+            if (hubs[nHub] != null) {
+                Hub vacio = hubs[nHub];
+                return true;
+            }
+        }
+        return true;
     }
 
     public String toString() {
-        String resultado = "";
-
+        String plano = new String();
         for (int i = 0; i < hubs.length; i++) {
-             resultado += hubs[i].toString();
+            plano += hubs.toString() + "\n";
         }
-        return resultado;
+        return plano;
     }
-
 }
